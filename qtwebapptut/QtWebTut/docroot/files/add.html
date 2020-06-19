@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new item</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                {if logged-in}
+                <a href="/items"><li>Мои вещи</li></a>
+                <a href="/login"><li>Выход</li></a>
+                {else logged-in}
+                <a href="/login"><li>Вход</li></a>
+                <a href="/register"><li>Регистрация</li></a>
+                {end logged-in}
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="main-form">
+        <h1 class="title">Добавление предмета</h1>
+        <form action="/add" method="POST" class="form" enctype="multipart/form-data">
+            <p>Название предмета</p>
+            <input type="text" placeholder="Название предмета" name="title" required>
+            <p>Описание предмета</p>
+            <textarea name="description" id="" cols="30" rows="10" placeholder="Описание"></textarea>
+            <p>Фотография</p>
+            <input type="file" name="photo" required>
+            <p>Цена</p>
+            <input type="number" name="price" placeholder="Цена"> 
+            <p>Ссылка</p>
+            <input type="text" name = "link" placeholder="Ссылка на предмет"> 
+            <p>Категория предмета</p>
+            <select name="category" id="category">
+                {loop category}
+                    <option value="{category.id}">{category.name}</option>
+                {end category}
+                <!-- <option value="2">Электроника</option>
+                <option value="3">Автомобли</option>
+                <option value="4">Недвижимость</option>
+                <option value="5">Другое</option> -->
+            </select>
+            <input type="hidden" name="action" value="show">
+            <button class="submit">+Добавить предмет</button>
+        </form>
+    </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category X page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <a href="/user_list"><li>Список пользователей</li></a>
+                <a href="/logout"><li>Выход</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="/items">Мои вещи</a></li>
+                <li><a href="/categories">Мои категории</a></li>
+                <a href="/add" class="add-button">+Добавить предмет</a>
+                <a href="/category_add" class="add-button">+Добавить категорию</a>
+            </ul>
+        </nav>
+        <div class="things">
+            <h1 class="page-header">Мои вещи</h1>
+            {loop items}
+                <div class="thing">
+                    <img src="{items.photo}">
+                    <h3>{items.title}</h3>
+                    <div class="item-info">
+                        {if desc_exist}
+                            <p>Описание: {items.descript}</p>
+                        {end desc_exist}
+
+                        {if price_exist}
+                            <p>Цена: {items.price}р</p>
+                        {end price_exist}
+                            <p>Категория: {items.category}</p>
+                        {if link_exist}
+                            <p><a href="https://www.{items.link}" class="link-item">Купил здесь</a></p>
+                        {end link_exist}
+                            <a href="/change?photo={items.photo_change}" class="change-button">Изменить</a></button>
+                            <form action="/items">
+                                <button name="delete" class="delete-button" value="{items.photo}">Удалить предмет</button>
+                            </form>
+                    </div>
+                </div>
+            {end items}
+            <!-- <div class="thing">
+                <img src="user-images/1592472444069a5tSRU_rCCw.jpg">
+                <h3>Clothes</h3>
+                    <div class="item-info">
+
+                    <p>Описание: I love this clothes</p>
+                
+
+                
+                    <p>Цена: 399р</p>
+                
+
+                
+                    <p><a href="https://www.my-clother.com" class="link-item">Купил здесь</a></p>
+                
+                    <form action="/items">
+                        <button name="delete" class="delete-button" value="user-images/1592472444069a5tSRU_rCCw.jpg">Удалить предмет</button>
+                    </form>
+                    <a href="/change?photo=1592472444069a5tSRU_rCCw.jpg" class="change-button">Изменить</a></button>
+                </div>
+            </div>
+        
+            <div class="thing">
+                <img src="user-images/1592477812942271136.jpg" width="200px" height="300px">
+                <h3>New Item</h3>
+                
+                    <p>Описание: New Description</p>
+                
+
+                
+                    <p>Цена: 199р</p>
+                
+
+                
+                    <p><a href="https://www.teeeest.com">Купил здесь</a></p>
+                
+                    <form action="/items">
+                        <button name="delete" value="user-images/1592477812942271136.jpg">Удалить предмет</button>
+                    </form>
+                    <a href="/change?photo=1592477812942271136.jpg">Изменить</a></button>
+            </div>
+        
+            <div class="thing">
+                <img src="user-images/1592491536517272588.jpg" width="200px" height="300px">
+                <h3>priv</h3>
+                
+                    <p>Описание: private</p>
+                
+
+                
+                    <p>Цена: 333р</p>
+                
+
+                
+                    <p><a href="https://www.34324">Купил здесь</a></p>
+                
+                    <form action="/items">
+                        <button name="delete" value="user-images/1592491536517272588.jpg">Удалить предмет</button>
+                    </form>
+                    <a href="/change?photo=1592491536517272588.jpg">Изменить</a></button>
+            </div>
+        
+            <div class="thing">
+                <img src="user-images/1592494418355272588.jpg" width="200px" height="300px">
+                <h3>fdgjdkfg</h3>
+                
+                    <p>Описание: rdgdfgdf</p>
+                
+
+                
+                    <p>Цена: 432423р</p>
+                
+
+                
+                    <p><a href="https://www.gfdgdfg">Купил здесь</a></p>
+                
+                    <form action="/items">
+                        <button name="delete" value="user-images/1592494418355272588.jpg">Удалить предмет</button>
+                    </form>
+                    <a href="/change?photo=1592494418355272588.jpg">Изменить</a></button>
+            </div> -->
+        </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

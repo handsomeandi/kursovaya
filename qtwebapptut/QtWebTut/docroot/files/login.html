@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <a href="/register"><li>Регистрация</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="title">Вход</h1>
+        <div class="main-form">
+            <form action="/login" method="GET" class="form">
+                <label for="login">Логин</label>
+                <input type="text" placeholder="Логин" name="login"> 
+                <label for="pwd">Пароль</label>
+                <input type="password" placeholder="Пароль" name="pwd"> 
+                <button onclick="history.go(0);" class="submit">Войти</button>
+            </form>
+                
+        </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

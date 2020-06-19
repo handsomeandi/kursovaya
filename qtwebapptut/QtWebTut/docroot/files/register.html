@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                {if logged-in}
+                <a href="/login"><li>Выход</li></a>
+                {else logged-in}
+                <a href="/login"><li>Вход</li></a>
+                {end logged-in}
+            </ul>
+        </nav>
+    </header>
+    <div class="main-form">
+        <h1 class="title">Регистрация</h1>
+        <form action="/register" class="form" method="POST" id="register-form">
+            <label for="name" id="name-label">Имя</label>
+            <input type="text" placeholder="Имя" name="name" minlength="3" maxlength="32" required> 
+            <label for="surname" id="surname-label">Фамилия</label>
+            <input type="text" placeholder="Фамилия" name="surname" minlength="3" maxlength="32" required> 
+            <label for="login" id="login-label">Логин</label>
+            <input type="text" placeholder="Логин" name="login" minlength="5" maxlength="32" required> 
+            <label for="mail" id="mail-label">Электронная почта</label>
+            <input type="email" placeholder="Электронная почта" name="email" minlength="5" maxlength="64" required> 
+            <label for="pwd" id="pwd-label">Пароль</label>
+            <input type="password" placeholder="Пароль" name="pwd" id="pwd" minlength="6" maxlength="64" required> 
+            <label for="pwd-repeat" id="pwd-repeat-label">Повторите пароль</label>
+            <input type="password" placeholder="Пароль еще раз" name="pwd-repeat" id="pwd-repeat" minlength="6" maxlength="64" required> 
+            <label for="profile-type" id="profile-label">Тип профиля</label>
+            <select name="privacy" name="profile-type">
+                <option value="1">Открытый</option>
+                <option value="2">Приватный</option>
+            </select>
+            <button class="submit">Регистрация</button>
+        </form>
+    </div>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+<script src="script.js"></script>   
+</body>
+</html>

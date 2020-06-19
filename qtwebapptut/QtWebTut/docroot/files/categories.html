@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <a href="/items"><li>Мои вещи</li></a>
+                <a href="/logout"><li>Выход</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="/items">Мои вещи</a></li>
+                <li><a href="/categories">Мои категории</a></li>
+                <a href="/category_add" class="add-button">+Добавить категорию</a>
+                <a href="/add" class="add-button">+Добавить предмет</a>
+            </ul>
+        </nav>
+        <div class="categories">
+        {if display_cats} 
+            <h1 class="page-header">Мои категории</h1>
+            {loop category} 
+                <a href="/categories?user_id={user_id}&category_id={category.id}" class="category-name">{category.name}</a>
+                <!-- <button class="category">{category.name}</button> -->
+            {end category}  
+        {else display_cats}
+            <h1 class="page-header">{category_opened}</h1>
+            <div class="things">
+                {loop items}
+                    <div class="thing">
+                        <img src="{items.photo}" width="100px">
+                        <h3>{items.title}</h3>
+                        <div class="item-info">
+                            {if desc_exist}
+                                <p>Описание: {items.descript}</p>
+                            {end desc_exist}
+
+                            {if price_exist}
+                                <p>Цена: {items.price}р</p>
+                            {end price_exist}
+
+                            {if link_exist}
+                                <p><a href="https://www.{items.link}" class="link-item">Купил здесь</a></p>
+                            {end link_exist}
+                                <form action="/items">
+                                    <button name="delete" value="{items.photo}" class="delete-button">Удалить предмет</button>
+                                </form>
+                                <a href="/change?photo={items.photo_change}" class="change-button">Изменить</a></button>
+                        </div>
+                    </div>
+                {end items}    
+            </div>    
+        {end display_cats}    
+            <!-- <button class="category">Электроника</button>
+            <button class="category">Автомобили</button>
+            <button class="category">Недвижимость</button>
+            <button class="category">Другие вещи</button> -->
+        </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

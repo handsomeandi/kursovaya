@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new category</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <a href="/items"><li>Мои вещи</li></a>
+                <a href="/logout"><li>Выход</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="main-form">
+        <h1 class="title">Добавление категории</h1>
+            <form action="/category_add" class="form">
+                <p>Название категории</p>
+                <input type="text" placeholder="Название категории" name="name" required>
+                <p>Приватность категори</p>
+                <select name="added_category_privacy" id="category">
+                    <option value="1">Открытая</option>
+                    <option value="2">Приватная</option>
+                </select>
+                <input type="hidden" name="action" value="show">
+                <button name="add_category_but" class="submit">Добавить категорию</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

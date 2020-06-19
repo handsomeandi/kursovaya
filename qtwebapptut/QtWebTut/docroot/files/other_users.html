@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category X page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <li><a href="/items">Мои вещи</a></li>
+                <a href="/logout"><li>Выход</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-header">Вещи пользователя {items.username_other}</h1>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="/items">Мои вещи</a></li>
+                <li><a href="/categories">Мои категории</a></li>
+            </ul>
+        </nav>
+        <div class="things">
+            {loop items}
+                    <div class="thing{items.category_privacy} thing">
+                        <img src="{items.photo}" width="100px">
+                        <h3>{items.title}</h3>
+                        <div class="item-info">
+                            {if desc_exist}
+                                <p>Описание: {items.descript}</p>
+                            {end desc_exist}
+
+                            {if price_exist}
+                                <p>Цена: {items.price}р</p>
+                            {end price_exist}
+
+                            {if link_exist}
+                                <p><a href="https://www.{items.link}" class="link-item">Купил здесь</a></p>
+                            {end link_exist}
+                                <p>Категория: {items.category}</p>
+                        </div>
+                    </div>
+            {end items}
+        </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

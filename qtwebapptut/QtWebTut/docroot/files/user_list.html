@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new category</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <a href="/items"><li>Мои вещи</li></a>
+                <a href="/logout"><li>Выход</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="/items">Мои вещи</a></li>
+                <li><a href="/categories">Мои категории</a></li>
+            </ul>
+        </nav>
+        <h1 class="page-header">Все пользователи</h1>
+        {loop users}
+            <a href="/other_users?req_user={users.id}" class="userlist-user">{users.name}</a>
+        {end users}
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>

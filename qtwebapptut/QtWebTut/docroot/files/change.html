@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new item</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">M<i class="fa fa-tshirt"></i>Stuff</a>
+        <nav class="nav-menu">
+            <ul class="nav-items">
+                <a href="/items"><li>Мои вещи</li></a>
+                <a href="/about"><li>О нас</li></a>
+                <a href="/logout"><li>Выход</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="main-form">
+            <h1 class="title">Изменение предмета</h1>
+            <form action="/change" method="POST" class="form" enctype="multipart/form-data">
+                <p>Название предмета</p>
+                <input type="text" placeholder="Название предмета" name="changed_title" value="{items.title}" required>
+                <p>Описание предмета</p>
+                <textarea name="changed_description" id="" cols="30" rows="10" placeholder="Описание">{items.descript}</textarea>
+                <p>Фотография</p>
+                <img src="{items.photo}" width="200px" style="object-fit: cover;">
+                <input type="file" name="changed_photo" value="Изменить">
+                <p>Цена</p>
+                <input type="number" name="changed_price" placeholder="Цена" value="{items.price}"> 
+                <p>Ссылка</p>
+                <input type="text" name = "changed_link" placeholder="Ссылка на предмет" value="{items.link}"> 
+                <p>Категория предмета</p>
+                <select name="changed_category" id="category">
+                    <option value="1">Одежда</option>
+                    <option value="2">Электроника</option>
+                    <option value="3">Автомобли</option>
+                    <option value="4">Недвижимость</option>
+                    <option value="5">Другое</option>
+                </select>
+                <input type="hidden" name="action" value="show">
+                <button name="photo" class="submit" value="{photo_change}">Изменить предмет</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p><i class="far fa-copyright"></i>2020 Made by Arthur</p>
+    </footer>
+    
+</body>
+</html>
