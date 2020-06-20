@@ -148,6 +148,6 @@ void ItemAddingController::service(HttpRequest &request, HttpResponse &response)
     }
     t.setCondition("logged-in", !username.isEmpty());
     response.write(t.toUtf8(), true);
-
+}
 
 
