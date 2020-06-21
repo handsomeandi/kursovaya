@@ -8,7 +8,7 @@
 
 После настройка MySQL Server, Заходим в MySQL Workbench, подключаемся и создаем базу данных users (create database users;), далее заменяем строку создания на (use users;), а после нее вставляем содержимое файла [kurs_proj.sql](https://github.com/handsomeandi/kursovaya/blob/master/qtwebapptut/QtWebTut/docroot/mysql_database/kurs_proj.sql)
 
-Далее скачиваем репозиторий и распаковываем в любое место. 
+Далее скачиваем репозиторий и распаковываем в любое место(папку qtwebapptut сохранить). 
 
 В файле [sqlconnection.cpp](https://github.com/handsomeandi/kursovaya/blob/master/qtwebapptut/QtWebTut/sqlconnection.cpp) меняем поля db.setUserName() и db.setPassword() на свои данные, которые вводили при настройки MySQL Server(имя пользователя и пароль соответственно).
 
